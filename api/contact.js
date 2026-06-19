@@ -21,7 +21,8 @@ const HAIR = '#e3ddcc';       // hairline rules on the cream card
 
 // Assets (served from the site root)
 const SYMBOL_URL = 'https://warpathcollective.com/warpath-symbol-cream.png';
-const WORDMARK_URL = 'https://warpathcollective.com/warpath-wordmark.png'; // wordmark cropped from the logo (carved brand font)
+const WM_HEADER = 'https://warpathcollective.com/warpath-wm-header.png'; // Cinzel wordmark for the cream card
+const WM_FOOTER = 'https://warpathcollective.com/warpath-wm-footer.png'; // Cinzel wordmark for the charcoal footer
 const FONT_URL = 'https://warpathcollective.com/fonts/BaumWell.ttf';
 
 // One body font (BaumWell) with a matching serif fallback for clients that strip web fonts (e.g. Gmail).
@@ -48,15 +49,15 @@ function shell(preheader, inner) {
     '<table role="presentation" cellpadding="0" cellspacing="0" style="width:600px;max-width:600px;background:' + CARD + ';border-radius:14px;overflow:hidden;font-family:' + FONT + ';">' +
     // header: ship/W symbol + Enchanted Land wordmark image
     '<tr><td align="center" style="padding:44px 44px 0;">' +
-    '<img src="' + SYMBOL_URL + '" width="80" alt="" style="display:block;margin:0 auto 12px;width:80px;height:auto;border:0;">' +
-    '<img src="' + WORDMARK_URL + '" width="300" alt="Warpath Collective" style="display:block;margin:0 auto;width:300px;max-width:84%;height:auto;border:0;">' +
+    '<img src="' + SYMBOL_URL + '" width="78" alt="" style="display:block;margin:0 auto 16px;width:78px;height:auto;border:0;">' +
+    '<img src="' + WM_HEADER + '" width="330" alt="Warpath Collective" style="display:block;margin:0 auto;width:330px;max-width:86%;height:auto;border:0;">' +
     '</td></tr>' +
     '<tr><td align="center" style="padding:22px 0 0;"><div style="width:46px;height:1px;background:' + GOLD + ';line-height:1px;font-size:1px;">&nbsp;</div></td></tr>' +
     // content
     '<tr><td style="padding:32px 50px 46px;font-family:' + FONT + ';color:' + INK + ';">' + inner + '</td></tr>' +
     // footer
     '<tr><td align="center" style="background:' + CHARCOAL + ';padding:24px 30px;">' +
-    '<img src="' + WORDMARK_URL + '" width="180" alt="Warpath Collective" style="display:block;margin:0 auto 8px;width:180px;height:auto;border:0;">' +
+    '<img src="' + WM_FOOTER + '" width="200" alt="Warpath Collective" style="display:block;margin:0 auto 9px;width:200px;height:auto;border:0;">' +
     '<div style="font-family:' + FONT + ';font-size:12.5px;letter-spacing:.5px;color:' + FOOT + ';">warpathcollective.com</div>' +
     '</td></tr>' +
     '</table></td></tr></table></body></html>';
