@@ -2,26 +2,30 @@
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#17171d"/><stop offset="1" stop-color="#0e0e12"/></linearGradient>
 <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#241e12"/><stop offset="1" stop-color="#141410"/></linearGradient>
-<linearGradient id="ph" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#20202a"/><stop offset="1" stop-color="#15151b"/></linearGradient>
+<linearGradient id="ph" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22222c"/><stop offset="1" stop-color="#161620"/></linearGradient>
 </defs>
 <rect width="800" height="500" fill="url(#bg)"/>
 <rect x="0" y="0" width="800" height="46" fill="#101014"/>
 <line x1="0" y1="46" x2="800" y2="46" stroke="#23242e"/>
 <rect x="33" y="18" width="9" height="9" fill="#A88B4D" transform="rotate(45 37.5 22.5)"/>
 <text x="56" y="28" fill="#E8E6DF" font-family="Georgia, serif" font-size="14" letter-spacing="3">WARPATH STORE</text>
-<text x="606" y="28" fill="#8d8d95" font-size="11" letter-spacing="2">SHOP</text>
-<text x="664" y="28" fill="#8d8d95" font-size="11" letter-spacing="2">ABOUT</text>
+<text x="600" y="28" fill="#8d8d95" font-size="11" letter-spacing="2">SHOP</text>
+<text x="658" y="28" fill="#8d8d95" font-size="11" letter-spacing="2">ABOUT</text>
 <rect x="742" y="15" width="24" height="17" rx="2" fill="none" stroke="#A88B4D" stroke-width="1.5"/>
-<circle cx="748" cy="36" r="1.6" fill="#A88B4D"/><circle cx="760" cy="36" r="1.6" fill="#A88B4D"/>
 <rect x="34" y="66" width="732" height="120" rx="10" fill="url(#hero)" stroke="#2a2a33"/>
 <text x="60" y="103" fill="#A88B4D" font-size="11" letter-spacing="4">NEW DROP</text>
 <text x="60" y="137" fill="#E8E6DF" font-family="Georgia, serif" font-size="27">The collection is live.</text>
 <rect x="60" y="150" width="124" height="30" rx="4" fill="#A88B4D"/>
 <text x="122" y="170" fill="#1a160c" font-size="11" letter-spacing="2" text-anchor="middle" font-weight="bold">SHOP NOW</text>
+<rect x="560" y="92" width="174" height="70" rx="8" fill="#1a1a22" stroke="#2a2a33"/>
+<rect x="576" y="106" width="42" height="42" rx="4" fill="url(#ph)"/>
+<rect x="632" y="112" width="86" height="7" rx="3" fill="#3a3a44"/>
+<rect x="632" y="128" width="60" height="7" rx="3" fill="#2e2e38"/>
+<text x="632" y="156" fill="#A88B4D" font-size="11" font-weight="bold">CHECKOUT</text>
 <g>
 <rect x="34" y="208" width="232" height="252" rx="10" fill="#15151a" stroke="#23242e"/>
 <rect x="50" y="224" width="200" height="142" rx="6" fill="url(#ph)"/>
-<rect x="50" y="224" width="42" height="3" fill="#A88B4D" opacity="0.7"/>
+<rect x="142" y="287" width="16" height="16" fill="#A88B4D" opacity="0.28" transform="rotate(45 150 295)"/>
 <text x="50" y="392" fill="#E8E6DF" font-size="13">Signature Tee</text>
 <text x="50" y="413" fill="#8d8d95" font-size="11">Charcoal / Bone</text>
 <text x="50" y="442" fill="#A88B4D" font-size="15" font-weight="bold">$48</text>
@@ -31,7 +35,7 @@
 <g>
 <rect x="284" y="208" width="232" height="252" rx="10" fill="#15151a" stroke="#23242e"/>
 <rect x="300" y="224" width="200" height="142" rx="6" fill="url(#ph)"/>
-<rect x="300" y="224" width="42" height="3" fill="#A88B4D" opacity="0.7"/>
+<rect x="392" y="287" width="16" height="16" fill="#A88B4D" opacity="0.28" transform="rotate(45 400 295)"/>
 <text x="300" y="392" fill="#E8E6DF" font-size="13">Field Hoodie</text>
 <text x="300" y="413" fill="#8d8d95" font-size="11">Iron / Rust</text>
 <text x="300" y="442" fill="#A88B4D" font-size="15" font-weight="bold">$72</text>
@@ -41,7 +45,7 @@
 <g>
 <rect x="534" y="208" width="232" height="252" rx="10" fill="#15151a" stroke="#23242e"/>
 <rect x="550" y="224" width="200" height="142" rx="6" fill="url(#ph)"/>
-<rect x="550" y="224" width="42" height="3" fill="#A88B4D" opacity="0.7"/>
+<rect x="642" y="287" width="16" height="16" fill="#A88B4D" opacity="0.28" transform="rotate(45 650 295)"/>
 <text x="550" y="392" fill="#E8E6DF" font-size="13">Crest Cap</text>
 <text x="550" y="413" fill="#8d8d95" font-size="11">Bone / Gold</text>
 <text x="550" y="442" fill="#A88B4D" font-size="15" font-weight="bold">$34</text>

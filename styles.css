@@ -91,7 +91,7 @@ html.js .reveal.in{opacity:1;transform:none;}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
 .shot{aspect-ratio:16/10;border-radius:8px;border:1px solid var(--line);background:radial-gradient(120% 120% at 50% 0,#1b1b21,#0f0f13);display:flex;align-items:center;justify-content:center;margin-bottom:20px;overflow:hidden;}
 .shot span{font-family:'Cinzel',serif;color:var(--iron);font-size:11px;letter-spacing:.24em;text-transform:uppercase;}
-.shot img{width:100%;height:100%;object-fit:cover;display:block;}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;}
 .gates{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;max-width:880px;margin:0 auto;}
 @media(max-width:560px){.gates{grid-template-columns:1fr;}}
 .band{padding:84px 0;border-top:1px solid var(--line);}
