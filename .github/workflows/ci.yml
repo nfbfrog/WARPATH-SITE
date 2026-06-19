@@ -1,0 +1,34 @@
+name: CI
+
+# Security gates for the Warpath marketing site. It is a static HTML site with one
+# serverless function (api/contact.js), so there is no build or unit-test step;
+# the gates are dependency auditing and secret scanning.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  security:
+    name: Security scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      # Hard gate: block on critical advisories. Highs are reported but
+      # non-blocking; Dependabot opens the fix PRs automatically.
+      - name: Dependency audit (block on critical)
+        run: npm audit --audit-level=critical
+      - name: Dependency audit (report high and above, non-blocking)
+        run: npm audit --audit-level=high || true
+      # Scan the full git history for committed secrets; fails the build on any hit.
+      - name: Secret scan (gitleaks)
+        run: docker run --rm -v "${{ github.workspace }}:/repo" ghcr.io/gitleaks/gitleaks:latest git /repo --redact --no-banner
