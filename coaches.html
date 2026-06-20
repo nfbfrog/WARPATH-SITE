@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>For Coaches &amp; Creators — Warpath Collective</title>
+<title>For Coaches &amp; Creators â€” Warpath Collective</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 <header class="topbar">
@@ -24,25 +24,25 @@
 </header>
 <main class="wrap">
 <section class="page-hero reveal">
-<a class="back" href="/">← Warpath Collective</a>
+<a class="back" href="/">â† Warpath Collective</a>
 <p class="eyebrow">For Coaches &amp; Creators</p>
 <h1 class="headline serif">Own the platform your audience lives on.</h1>
-<p class="lead">Coaching apps, client portals, course delivery, and the automation behind them — built to your brand, owned by you, and run by a team that stays. Stop paying rent on someone else's software.</p>
+<p class="lead">Coaching apps, client portals, course delivery, and the automation behind them â€” built to your brand, owned by you, and run by a team that stays. Stop paying rent on someone else's software.</p>
 </section>
 <section class="section-pad reveal">
 <p class="sec-label">What you get</p>
 <ul class="flist">
-<li><strong>Your own branded app &amp; member area</strong> — clients log into your brand, not a rented platform that owns the relationship.</li>
-<li><strong>Coaching tools built in</strong> — check-ins, program and content delivery, messaging, and progress tracking. Training and meal builders for fitness coaches.</li>
-<li><strong>Memberships, courses &amp; payments</strong> — recurring revenue, course access, and checkout, automated.</li>
-<li><strong>AI features</strong> — an AI co-pilot, content help, and analysis wired into how you actually coach.</li>
-<li><strong>Lead capture &amp; follow-up</strong> — every new lead caught, nurtured, and converted, automatically.</li>
-<li><strong>Ongoing upgrades</strong> — we evolve it as your audience and offers grow.</li>
+<li><strong>Your own branded app &amp; member area</strong> â€” clients log into your brand, not a rented platform that owns the relationship.</li>
+<li><strong>Coaching tools built in</strong> â€” check-ins, program and content delivery, messaging, and progress tracking. Training and meal builders for fitness coaches.</li>
+<li><strong>Memberships, courses &amp; payments</strong> â€” recurring revenue, course access, and checkout, automated.</li>
+<li><strong>AI features</strong> â€” an AI co-pilot, content help, and analysis wired into how you actually coach.</li>
+<li><strong>Lead capture &amp; follow-up</strong> â€” every new lead caught, nurtured, and converted, automatically.</li>
+<li><strong>Ongoing upgrades</strong> â€” we evolve it as your audience and offers grow.</li>
 </ul>
 </section>
 <section class="section-pad reveal">
 <p class="sec-label">Why it's different</p>
-<p class="lead" style="text-align:center;">Rented course and coaching platforms own your audience, take a cut, and box you into their template. We build you a platform that's actually yours — your brand, your data, your rules — and keep building on it. <strong style="color:var(--bone);">They rent you software. We hand you the keys and stay.</strong></p>
+<p class="lead" style="text-align:center;">Rented course and coaching platforms own your audience, take a cut, and box you into their template. We build you a platform that's actually yours â€” your brand, your data, your rules â€” and keep building on it. <strong style="color:var(--bone);">They rent you software. We hand you the keys and stay.</strong></p>
 </section>
 <section class="section-pad reveal">
 <p class="sec-label">How it works</p>
@@ -56,7 +56,7 @@
 <div class="cta-close">
 <div class="dia"></div>
 <h2 class="serif">Ready to own your coaching business?</h2>
-<p>Stop building on rented land. Tell us how you coach and what you sell, and we'll build the platform — and stay to run it.</p>
+<p>Stop building on rented land. Tell us how you coach and what you sell, and we'll build the platform â€” and stay to run it.</p>
 <form class="form" id="signup">
 <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
 <div class="frow"><label for="f-name">Name</label><input id="f-name" type="text" name="name" placeholder="Your name" required></div>
@@ -72,14 +72,14 @@
 <footer>
 <a class="fbrand" href="/">WARPATH <i>COLLECTIVE</i></a>
 <div class="ftag">We row together</div>
-<div class="fcopy">© 2026 Warpath Collective. All rights reserved.</div>
+<div class="fcopy">Â© 2026 Warpath Collective. All rights reserved.</div>
 </footer>
 <script>
 document.documentElement.classList.add('js');
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
 var f=document.getElementById('signup');
-if(f){f.addEventListener('submit',function(e){e.preventDefault();var m=document.getElementById('formMsg');m.className='form-msg';m.textContent='Sending…';var fd=new FormData(f);var payload={name:fd.get('name'),email:fd.get('email'),business:fd.get('business'),message:fd.get('message'),botcheck:fd.get('botcheck')};fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).then(function(r){return r.json();}).then(function(j){if(j.success){f.reset();m.className='form-msg ok';m.textContent="You're on the Warpath. We'll be in touch within a day.";}else{m.className='form-msg err';m.textContent='Something went wrong — try again in a moment.';}}).catch(function(){m.className='form-msg err';m.textContent='Something went wrong — try again in a moment.';});});}
+if(f){f.addEventListener('submit',function(e){e.preventDefault();var m=document.getElementById('formMsg');m.className='form-msg';m.textContent='Sendingâ€¦';var fd=new FormData(f);var payload={name:fd.get('name'),email:fd.get('email'),business:fd.get('business'),message:fd.get('message'),botcheck:fd.get('botcheck')};fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).then(function(r){return r.json();}).then(function(j){if(j.success){f.reset();m.className='form-msg ok';m.textContent="You're on the Warpath. We'll be in touch within a day.";}else{m.className='form-msg err';m.textContent='Something went wrong â€” try again in a moment.';}}).catch(function(){m.className='form-msg err';m.textContent='Something went wrong â€” try again in a moment.';});});}
 </script>
 </body>
 </html>

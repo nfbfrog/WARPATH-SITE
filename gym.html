@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>For Gyms &amp; Studios — Warpath Collective</title>
+<title>For Gyms &amp; Studios â€” Warpath Collective</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 <header class="topbar">
@@ -24,25 +24,25 @@
 </header>
 <main class="wrap">
 <section class="page-hero reveal">
-<a class="back" href="/">← Warpath Collective</a>
+<a class="back" href="/">â† Warpath Collective</a>
 <p class="eyebrow">For Gyms &amp; Studios</p>
 <h1 class="headline serif">Your gym's own platform.</h1>
-<p class="lead">Members, billing, and class booking — your whole gym in an app that's actually yours. Built for how you run, and maintained by a team that stays.</p>
+<p class="lead">Members, billing, and class booking â€” your whole gym in an app that's actually yours. Built for how you run, and maintained by a team that stays.</p>
 </section>
 <section class="section-pad reveal">
 <p class="sec-label">What you get</p>
 <ul class="flist">
-<li><strong>Your own branded app &amp; site</strong> — your name and brand, not a rented login your members stare at.</li>
-<li><strong>Memberships &amp; billing</strong> — recurring plans, payments, and renewals, automated and clean.</li>
-<li><strong>Class scheduling &amp; booking</strong> — for studios and class-based gyms, built in.</li>
-<li><strong>Member CRM</strong> — leads, retention, check-ins, and comms in one place.</li>
-<li><strong>Optional 24/7 door access</strong> — keyless entry for round-the-clock gyms, integrated.</li>
-<li><strong>Ongoing upgrades</strong> — we adapt it as your gym grows.</li>
+<li><strong>Your own branded app &amp; site</strong> â€” your name and brand, not a rented login your members stare at.</li>
+<li><strong>Memberships &amp; billing</strong> â€” recurring plans, payments, and renewals, automated and clean.</li>
+<li><strong>Class scheduling &amp; booking</strong> â€” for studios and class-based gyms, built in.</li>
+<li><strong>Member CRM</strong> â€” leads, retention, check-ins, and comms in one place.</li>
+<li><strong>Optional 24/7 door access</strong> â€” keyless entry for round-the-clock gyms, integrated.</li>
+<li><strong>Ongoing upgrades</strong> â€” we adapt it as your gym grows.</li>
 </ul>
 </section>
 <section class="section-pad reveal">
 <p class="sec-label">Why it's different</p>
-<p class="lead" style="text-align:center;">Off-the-shelf platforms sell you a login and disappear. We embed with your gym — build it to your needs, keep it running, and evolve it as you grow. <strong style="color:var(--bone);">They sell software. We stay.</strong></p>
+<p class="lead" style="text-align:center;">Off-the-shelf platforms sell you a login and disappear. We embed with your gym â€” build it to your needs, keep it running, and evolve it as you grow. <strong style="color:var(--bone);">They sell software. We stay.</strong></p>
 </section>
 <section class="section-pad reveal">
 <p class="sec-label">How it works</p>
@@ -56,7 +56,7 @@
 <div class="cta-close">
 <div class="dia"></div>
 <h2 class="serif">Ready to own your gym's software?</h2>
-<p>Stop renting space in software that doesn't know your gym. Tell us how you run, and we'll build it — and stay.</p>
+<p>Stop renting space in software that doesn't know your gym. Tell us how you run, and we'll build it â€” and stay.</p>
 <form class="form" id="signup">
 <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
 <div class="frow"><label for="f-name">Name</label><input id="f-name" type="text" name="name" placeholder="Your name" required></div>
@@ -72,14 +72,14 @@
 <footer>
 <a class="fbrand" href="/">WARPATH <i>COLLECTIVE</i></a>
 <div class="ftag">We row together</div>
-<div class="fcopy">© 2026 Warpath Collective. All rights reserved.</div>
+<div class="fcopy">Â© 2026 Warpath Collective. All rights reserved.</div>
 </footer>
 <script>
 document.documentElement.classList.add('js');
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
 var f=document.getElementById('signup');
-if(f){f.addEventListener('submit',function(e){e.preventDefault();var m=document.getElementById('formMsg');m.className='form-msg';m.textContent='Sending…';var fd=new FormData(f);var payload={name:fd.get('name'),email:fd.get('email'),business:fd.get('business'),message:fd.get('message'),botcheck:fd.get('botcheck')};fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).then(function(r){return r.json();}).then(function(j){if(j.success){f.reset();m.className='form-msg ok';m.textContent="You're on the Warpath. We'll be in touch within a day.";}else{m.className='form-msg err';m.textContent='Something went wrong — try again in a moment.';}}).catch(function(){m.className='form-msg err';m.textContent='Something went wrong — try again in a moment.';});});}
+if(f){f.addEventListener('submit',function(e){e.preventDefault();var m=document.getElementById('formMsg');m.className='form-msg';m.textContent='Sendingâ€¦';var fd=new FormData(f);var payload={name:fd.get('name'),email:fd.get('email'),business:fd.get('business'),message:fd.get('message'),botcheck:fd.get('botcheck')};fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).then(function(r){return r.json();}).then(function(j){if(j.success){f.reset();m.className='form-msg ok';m.textContent="You're on the Warpath. We'll be in touch within a day.";}else{m.className='form-msg err';m.textContent='Something went wrong â€” try again in a moment.';}}).catch(function(){m.className='form-msg err';m.textContent='Something went wrong â€” try again in a moment.';});});}
 </script>
 </body>
 </html>
