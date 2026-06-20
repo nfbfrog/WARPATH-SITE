@@ -88,7 +88,7 @@ module.exports = async function handler(req, res) {
   }
   body = body || {};
 
-  const { name, email, business, projectType, timeline, links, message, botcheck } = body;
+  const { name, email, business, projectType, timeline, links, message, botcheck, attachments } = body;
 
   // Honeypot: bots fill this; humans never see it.
   if (botcheck) return res.status(200).json({ success: true });
@@ -113,6 +113,23 @@ module.exports = async function handler(req, res) {
     links: clip(links, 1500),
     message: clip(message, 5000)
   };
+
+  // Decode drag-and-dropped files into Resend attachments (defensive: cap count + total size).
+  const safeAttachments = [];
+  if (Array.isArray(attachments)) {
+    let totalBytes = 0;
+    for (let i = 0; i < attachments.length && safeAttachments.length < 5; i++) {
+      const a = attachments[i];
+      if (!a || typeof a.filename !== 'string' || typeof a.content !== 'string') continue;
+      const fname = a.filename.replace(/[\\/\r\n\t]/g, '_').slice(0, 200);
+      let buf;
+      try { buf = Buffer.from(a.content, 'base64'); } catch (e) { continue; }
+      if (!buf || !buf.length) continue;
+      totalBytes += buf.length;
+      if (totalBytes > 3.6 * 1024 * 1024) break;
+      safeAttachments.push({ filename: fname, content: buf });
+    }
+  }
 
   const apiKey = process.env.RESEND_API_KEY;
   const fromAddr = process.env.MAIL_FROM;
@@ -145,6 +162,7 @@ module.exports = async function handler(req, res) {
     row('Timeline', esc(lead.timeline || '—')) +
     row('What they need', msgHtml) +
     (lead.links ? row('To review first', linksHtml) : '') +
+    (safeAttachments.length ? row('Attachments', esc(safeAttachments.map(function (a) { return a.filename; }).join(', '))) : '') +
     '</table>' +
     '<div style="padding-top:30px;">' +
     '<a href="mailto:' + esc(lead.email) + '?subject=' + encodeURIComponent('Re: your Warpath Collective inquiry') + '" ' +
@@ -158,7 +176,8 @@ module.exports = async function handler(req, res) {
     'Business: ' + (lead.business || '-') + '\n' +
     'Project type: ' + (lead.projectType || '-') + '\n' +
     'Timeline: ' + (lead.timeline || '-') + '\n' +
-    (lead.links ? 'To review first:\n' + lead.links + '\n' : '') + '\n' +
+    (lead.links ? 'To review first:\n' + lead.links + '\n' : '') +
+    (safeAttachments.length ? 'Attachments: ' + safeAttachments.map(function (a) { return a.filename; }).join(', ') + '\n' : '') + '\n' +
     'What they need:\n' + lead.message + '\n';
 
   // --- Customer-facing auto-reply ------------------------------------------
@@ -190,7 +209,8 @@ module.exports = async function handler(req, res) {
       replyTo: lead.email,
       subject: 'New lead: ' + lead.name,
       html: shell('New lead from ' + lead.name, leadInner),
-      text: leadText
+      text: leadText,
+      attachments: safeAttachments.length ? safeAttachments : undefined
     });
     if (sent && sent.error) {
       return res.status(500).json({ success: false, error: String(sent.error.message || sent.error) });
