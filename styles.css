@@ -105,6 +105,11 @@ html.js .reveal.in{opacity:1;transform:none;}
 .navmenu a{display:block;padding:10px 13px;border-radius:7px;font-size:13.5px;letter-spacing:0;text-transform:none;color:rgba(232,230,223,.72);white-space:nowrap;transition:background .12s ease,color .12s ease;}
 .navmenu a:hover{background:rgba(168,139,77,.10);color:var(--bone);}
 @media(max-width:760px){.navdrop{display:none;}}
+html::before,html::after{content:"";position:fixed;top:0;bottom:0;width:46px;background-color:#A88B4D;background-image:url(portfolio/rail-symbols.svg);background-repeat:repeat-y;background-position:center top;background-size:46px auto;z-index:200;pointer-events:none;}
+html::before{left:0;}
+html::after{right:0;}
+body{padding-left:46px;padding-right:46px;}
+@media(max-width:760px){html::before,html::after{display:none;}body{padding-left:0;padding-right:0;}}
 .shot{aspect-ratio:16/10;border-radius:8px;border:1px solid var(--line);background:radial-gradient(120% 120% at 50% 0,#1b1b21,#0f0f13);display:flex;align-items:center;justify-content:center;margin-bottom:20px;overflow:hidden;}
 .shot span{font-family:'Cinzel',serif;color:var(--iron);font-size:11px;letter-spacing:.24em;text-transform:uppercase;}
 .shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;}
