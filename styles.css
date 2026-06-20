@@ -96,11 +96,11 @@ html.js .reveal.in{opacity:1;transform:none;}
 .form select:required:invalid{color:#54545c;}
 .form select option{color:var(--bone);background:#0b0b0e;}
 #f-links{min-height:62px;}
-.booking-frame{margin:30px 0 14px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#0b0b0e;}
-.booking-frame iframe{display:block;width:100%;height:720px;border:0;}
+.booking-frame{margin:30px 0 14px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;color-scheme:light;}
+.booking-frame iframe{display:block;width:100%;height:780px;border:0;color-scheme:light;}
 .booking-placeholder{min-height:560px;display:flex;align-items:center;justify-content:center;color:var(--iron);font-family:'Cinzel',serif;letter-spacing:.18em;text-transform:uppercase;font-size:12px;}
 .booking-alt{font-size:14px;color:rgba(232,230,223,.6);margin-top:8px;}
-@media(max-width:760px){.booking-frame iframe{height:640px;}.booking-placeholder{min-height:460px;}}
+@media(max-width:760px){.booking-frame iframe{height:700px;}.booking-placeholder{min-height:460px;}}
 .form button.btn{width:100%;border:none;cursor:pointer;font-size:13px;padding:15px;margin-top:6px;}
 .form-msg{margin-top:14px;font-size:14px;min-height:20px;text-align:center;}
 .form-msg.ok{color:var(--gold);}
