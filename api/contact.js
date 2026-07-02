@@ -77,9 +77,47 @@ function row(label, valueHtml) {
     '</tr>';
 }
 
+// In-process rate limiter (per-IP sliding window + lockout). Serverless caveat:
+// state is per-lambda-instance and resets on cold start, so this raises the bar
+// against spam floods / inbox bombing rather than being an authoritative limiter
+// (the honeypot handles dumb bots; this handles deliberate flooding). Fail-open.
+const rlBuckets = new Map();
+function rateLimit(key, max, windowMs, lockMs) {
+  const now = Date.now();
+  let b = rlBuckets.get(key);
+  if (!b) { b = { hits: [], lockedUntil: 0 }; rlBuckets.set(key, b); }
+  if (b.lockedUntil > now) return { ok: false, retryAfter: Math.ceil((b.lockedUntil - now) / 1000) };
+  b.hits = b.hits.filter(function (t) { return t > now - windowMs; });
+  b.hits.push(now);
+  if (b.hits.length > max) {
+    b.lockedUntil = now + lockMs;
+    b.hits = [];
+    return { ok: false, retryAfter: Math.ceil(lockMs / 1000) };
+  }
+  if (rlBuckets.size > 5000) {
+    rlBuckets.forEach(function (v, k) {
+      if (v.lockedUntil < now && (!v.hits.length || v.hits[v.hits.length - 1] < now - windowMs)) rlBuckets.delete(k);
+    });
+  }
+  return { ok: true };
+}
+function clientIp(req) {
+  const xff = req.headers['x-forwarded-for'];
+  if (xff) return String(xff).split(',')[0].trim();
+  return req.headers['x-real-ip'] || (req.socket && req.socket.remoteAddress) || 'unknown';
+}
+
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ success: false, error: 'Method not allowed' });
+  }
+
+  // Throttle before any parsing/email work: this endpoint is public and sends
+  // email (with attachments) on every accepted hit. 5/min per IP, 10-min lockout.
+  const rl = rateLimit('contact:' + clientIp(req), 5, 60000, 10 * 60000);
+  if (!rl.ok) {
+    res.setHeader('Retry-After', String(rl.retryAfter));
+    return res.status(429).json({ success: false, error: 'Too many submissions — please try again shortly.' });
   }
 
   let body = req.body;
