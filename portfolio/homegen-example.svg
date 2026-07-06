@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Inter, Arial, sans-serif">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#17171d"/><stop offset="1" stop-color="#0e0e12"/></linearGradient>
+<linearGradient id="vid" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#241e12"/><stop offset="1" stop-color="#141410"/></linearGradient>
+<linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22222c"/><stop offset="1" stop-color="#161620"/></linearGradient>
+</defs>
+<rect width="800" height="500" fill="url(#bg)"/>
+<rect x="0" y="0" width="800" height="46" fill="#101014"/>
+<line x1="0" y1="46" x2="800" y2="46" stroke="#23242e"/>
+<rect x="33" y="18" width="9" height="9" fill="#A88B4D" transform="rotate(45 37.5 22.5)"/>
+<text x="56" y="28" fill="#E8E6DF" font-family="Georgia, serif" font-size="14" letter-spacing="3">HOMEGEN</text>
+<text x="640" y="28" fill="#8d8d95" font-size="11" letter-spacing="2">LISTING VIDEOS</text>
+
+<!-- phone frame -->
+<rect x="60" y="82" width="210" height="386" rx="26" fill="#0b0b0f" stroke="#2a2b35" stroke-width="2"/>
+<rect x="74" y="108" width="182" height="250" rx="10" fill="url(#vid)"/>
+<!-- play button -->
+<circle cx="165" cy="222" r="30" fill="#0D0D0F" opacity="0.75"/>
+<circle cx="165" cy="222" r="30" fill="none" stroke="#A88B4D" stroke-width="2"/>
+<path d="M157 208 L180 222 L157 236 Z" fill="#E8E6DF"/>
+<!-- caption bar on video -->
+<rect x="86" y="322" width="120" height="12" rx="6" fill="#A88B4D" opacity="0.85"/>
+<rect x="86" y="340" width="86" height="8" rx="4" fill="#8d8d95" opacity="0.6"/>
+<!-- listing card under video -->
+<rect x="74" y="372" width="182" height="80" rx="10" fill="url(#card)"/>
+<rect x="88" y="386" width="64" height="14" rx="3" fill="#7A1E1B"/>
+<text x="96" y="397" fill="#E8E6DF" font-size="9" letter-spacing="1">JUST LISTED</text>
+<text x="88" y="422" fill="#E8E6DF" font-size="17" font-weight="600">$439,000</text>
+<text x="88" y="440" fill="#8d8d95" font-size="10">128 Alder Court · 4 BR · 3 BA</text>
+
+<!-- right side: pipeline copy -->
+<text x="330" y="140" fill="#E8E6DF" font-family="Georgia, serif" font-size="26">Listing photos in.</text>
+<text x="330" y="174" fill="#E8E6DF" font-family="Georgia, serif" font-size="26">Branded video out.</text>
+<text x="330" y="210" fill="#8d8d95" font-size="13">Agents upload footage from a showing; HomeGen cuts, captions,</text>
+<text x="330" y="230" fill="#8d8d95" font-size="13">brands, and renders a listing reel automatically.</text>
+
+<!-- steps -->
+<rect x="330" y="264" width="380" height="52" rx="9" fill="url(#card)"/>
+<circle cx="356" cy="290" r="11" fill="none" stroke="#A88B4D" stroke-width="1.6"/><text x="352" y="294" fill="#A88B4D" font-size="11">1</text>
+<text x="378" y="286" fill="#E8E6DF" font-size="12" font-weight="600">Upload the walkthrough</text>
+<text x="378" y="302" fill="#8d8d95" font-size="10.5">Phone footage and listing details, straight from the driveway</text>
+
+<rect x="330" y="326" width="380" height="52" rx="9" fill="url(#card)"/>
+<circle cx="356" cy="352" r="11" fill="none" stroke="#A88B4D" stroke-width="1.6"/><text x="352" y="356" fill="#A88B4D" font-size="11">2</text>
+<text x="378" y="348" fill="#E8E6DF" font-size="12" font-weight="600">Auto-edit and brand</text>
+<text x="378" y="364" fill="#8d8d95" font-size="10.5">Cuts, captions, title and outro cards in the agent's brand</text>
+
+<rect x="330" y="388" width="380" height="52" rx="9" fill="url(#card)"/>
+<circle cx="356" cy="414" r="11" fill="none" stroke="#A88B4D" stroke-width="1.6"/><text x="352" y="418" fill="#A88B4D" font-size="11">3</text>
+<text x="378" y="410" fill="#E8E6DF" font-size="12" font-weight="600">Post-ready in minutes</text>
+<text x="378" y="426" fill="#8d8d95" font-size="10.5">Vertical and widescreen renders, ready for every channel</text>
+</svg>
