@@ -1,6 +1,6 @@
 # Warpath Collective — Website
 
-Marketing site for **Warpath Collective**: custom apps, sites & storefronts, automation, and ongoing retainers — plus a dedicated landing page for the gyms & studios vertical.
+Marketing site for **Warpath Collective**: Revenue Leak Audits, System Builds, automation, sites/storefronts, and systems retainers for owner-led businesses.
 
 Live: https://warpathcollective.com
 
@@ -11,8 +11,8 @@ Live: https://warpathcollective.com
 
 ## Pages
 - `index.html` — home
-- `apps.html`, `sites.html`, `automation.html`, `retainers.html` — service detail pages
-- `gym.html` — gyms & studios vertical landing page
+- `apps.html`, `sites.html`, `automation.html`, `retainers.html` — offer detail pages
+- `gym.html`, `coaches.html`, `small-business.html` — vertical/context pages
 
 ## Local preview
 ```

@@ -198,7 +198,7 @@ module.exports = async function handler(req, res) {
     row('Business', esc(lead.business || '—')) +
     row('Project type', esc(lead.projectType || '—')) +
     row('Timeline', esc(lead.timeline || '—')) +
-    row('What they need', msgHtml) +
+    row('Leak notes', msgHtml) +
     (lead.links ? row('To review first', linksHtml) : '') +
     (safeAttachments.length ? row('Attachments', esc(safeAttachments.map(function (a) { return a.filename; }).join(', '))) : '') +
     '</table>' +
@@ -216,7 +216,7 @@ module.exports = async function handler(req, res) {
     'Timeline: ' + (lead.timeline || '-') + '\n' +
     (lead.links ? 'To review first:\n' + lead.links + '\n' : '') +
     (safeAttachments.length ? 'Attachments: ' + safeAttachments.map(function (a) { return a.filename; }).join(', ') + '\n' : '') + '\n' +
-    'What they need:\n' + lead.message + '\n';
+    'Leak notes:\n' + lead.message + '\n';
 
   // --- Customer-facing auto-reply ------------------------------------------
   const replyInner =
