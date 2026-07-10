@@ -80,9 +80,10 @@
     var fd = new FormData(form);
     Promise.all(files.map(readFile)).then(function (attachments) {
       var payload = {
-        name: fd.get('name'), email: fd.get('email'), business: fd.get('business'),
+        name: fd.get('name'), email: fd.get('email'), phone: fd.get('phone'), business: fd.get('business'),
         message: fd.get('message'), projectType: fd.get('projectType'),
         timeline: fd.get('timeline'), links: fd.get('links'),
+        smsConsent: fd.get('smsConsent') === 'yes' ? 'yes' : '',
         botcheck: fd.get('botcheck'), attachments: attachments
       };
       return fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
